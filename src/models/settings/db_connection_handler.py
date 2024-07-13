@@ -8,6 +8,7 @@ class DbConnectionHandler:
 
     def connect(self) -> None:
         conn = sqlite3.connect(self.__connection_string, check_same_thread=False)
+        conn.execute("PRAGMA foreign_keys = ON") # Habilitando FKs no sqlite
         self.__conn = conn
 
     def get_connection(self) -> Connection:

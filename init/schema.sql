@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS 'trips' (
-    id TEXT PRIMARY KEY,
+    id TEXT PRIMARY KEY NOT NULL,
     destination TEXT NOT NULL,
     start_date DATETIME,
     end_date DATETIME,
@@ -9,14 +9,14 @@ CREATE TABLE IF NOT EXISTS 'trips' (
 );
 
 CREATE TABLE IF NOT EXISTS 'emails_to_invite' (
-    id TEXT PRIMARY KEY,
+    id TEXT PRIMARY KEY NOT NULL,
     trip_id TEXT,
     email TEXT NOT NULL,
     FOREIGN KEY (trip_id) REFERENCES trips(id)
 );
 
 CREATE TABLE IF NOT EXISTS 'links' (
-    id TEXT PRIMARY KEY,
+    id TEXT PRIMARY KEY NOT NULL,
     trip_id TEXT,
     link TEXT NOT NULL,
     title TEXT NOT NULL,
