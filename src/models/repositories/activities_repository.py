@@ -10,7 +10,7 @@ class ActivitiesRepository:
         cursor.execute(
             '''
                 INSERT INTO activities
-                    (id, trip_id, email, occurs_at)
+                    (id, trip_id, title, occurs_at)
                 VALUES
                     (?, ?, ?, ?)
             ''', (
