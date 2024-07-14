@@ -14,7 +14,7 @@ def test_create_trip():
 
     trips_infos = {
         "id": trip_id,
-        "destination": "puta que o pariu",
+        "destination": "local teste",
         "start_date": datetime.strptime("02-01-2024", "%d-%m-%Y"),
         "end_date": datetime.strptime("02-01-2024", "%d-%m-%Y") + timedelta(days=5),
         "owner_name": "Fdp",
@@ -28,12 +28,11 @@ def test_find_trip_by_id():
     conn = db_connection_handler.get_connection()
     trips_repository = TripsRepository(conn)
 
-    trip = trips_repository.find_trip_by_id(trip_id)
-    print(trip)
+    trips_repository.find_trip_by_id(trip_id)
 
 @pytest.mark.skip(reason="interacao com o banco")
 def test_update_trip_status():
     conn = db_connection_handler.get_connection()
     trips_repository = TripsRepository(conn)
 
-    trip = trips_repository.update_trip_status(trip_id)
+    trips_repository.update_trip_status(trip_id)
